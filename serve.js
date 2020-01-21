@@ -21,12 +21,10 @@
 // });
 
 var http = require('http');
-http.createServer((request, response)=> {
-  response.writeHead(200, {'Content-Type': 'text/html;charset="UTF-8"'},);
+http.createServer((request, response) => {
+  response.writeHead(200, { 'Content-Type': 'text/html;charset="UTF-8"' });
   response.write("<head><meta charset='UTF-8'></head>")
-  response.end('Update');
+  response.end('Updates');
 }).listen(8081);
 
 console.log('Server running at http://127.0.0.1:8081/');
-
-

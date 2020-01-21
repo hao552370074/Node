@@ -1,6 +1,20 @@
 import axios from 'axios'
 const qs = require('qs');
 
+axios.interceptor.baseUrl='http'
+axios.interceptor.request.use(config=>{
+    if (localStorage.getItem('token')) {
+        config.headers.token=localStorage.getItem('token')
+    }
+    return config;
+})
+axios.interceptor.response.use(res=>{
+    if (res.status==200) {
+        
+    }
+    return res;
+})
+
 export const api = {
     async get(url, data) {
         try {
