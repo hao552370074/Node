@@ -9,3 +9,17 @@ console.log(md5('123'));
 // rename重命名/移动文件
 // unlink删除文件
 // rmdir 删除目录
+
+
+
+
+
+
+// 检测是文件还是目录 fs.stat
+// 创建目录 fs.mkdir
+// 创建文件 fs.writeFile
+// 追加文件 fs.appendFile
+// 读取文件 fs.readFile
+// 读取目录 fs.readdir
+// 删除文件 fs.unlink
+// 删除目录 fs.rmdir
