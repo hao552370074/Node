@@ -1,5 +1,5 @@
-var md5=require('md5')
-console.log(md5('123'));
+// var md5=require('md5')
+// console.log(md5('123'));
 // stat 查询是目录还是文件
 // mkdir创建目录
 // writeFile写文件
@@ -23,3 +23,12 @@ console.log(md5('123'));
 // 读取目录 fs.readdir
 // 删除文件 fs.unlink
 // 删除目录 fs.rmdir
+
+
+
+
+
+
+
+
+
