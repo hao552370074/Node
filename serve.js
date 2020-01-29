@@ -19,12 +19,33 @@
 // server.listen(2666, function() {
 //   console.log("以http://127.0.0.1:2666 访问");
 // });
-
+var fs=require('fs');
+var url=require('url');
+var mimeMoudel=require('./moudel');
 var http = require('http');
 http.createServer((request, response) => {
-  response.writeHead(200, { 'Content-Type': 'text/html;charset="UTF-8"' });
-  response.write("<head><meta charset='UTF-8'></head>")
-  response.end('Updates');
+  let urls=url.parse(request.url).pathname
+  if (urls!='/favicon.ico') {
+  fs.readFile('./home.html',(error,data)=>{
+    if (error) {
+      let mime=mimeMoudel.getExtname(fs,urls)
+      fs.readFile('./404.html',(error,data)=>{
+          response.writeHead(404, { 'Content-Type': `${mime}`+';charset="UTF-8"' });
+          response.write(data)
+          response.end();
+      })
+    }else{
+      let mime=mimeMoudel.getExtname(fs,urls)
+      console.log(mime);
+      response.writeHead(200, { 'Content-Type': `${mime}`+';charset="UTF-8"' });
+      response.write(data)
+      response.end();
+    }
+  })
+
+
+  }
+
 }).listen(8081);
 
-console.log('Server running at http://127.0.0.1:8081/');
+// console.log('Server running at http://127.0.0.1:8081/');
