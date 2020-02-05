@@ -19,8 +19,6 @@ axios.interceptors.response.use(res => {
   }
 });
 
-
-
 const api = {
   async get(url, data) {
     try {

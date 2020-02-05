@@ -14,49 +14,51 @@
 </body>
 <script>
 
-    let list = [
-        {
-            name: '张三',
-            age: 23
-        },
-        {
-            name: '李四',
-            age: 19
-        },
-        {
-            name: '王五',
-            age: 18
-        },
-        { 
-            name: '陈兰',
-            age: 20
-        },
-        {
-            name: '陈兰',
-            age: 21
-        },
-        {
-            name: '陈兰',
-            age: 22
-        },
-        {
-            name: '陈兰',
-            age: 23
-        },
-        {
-            name: '冰楠',
-            age: 28
-        },
-    ]
+ 
 
-    let obj = {};
+    // let list = [
+    //     {
+    //         name: '张三',
+    //         age: 23
+    //     },
+    //     {
+    //         name: '李四',
+    //         age: 19
+    //     },
+    //     {
+    //         name: '王五',
+    //         age: 18
+    //     },
+    //     { 
+    //         name: '陈兰',
+    //         age: 20
+    //     },
+    //     {
+    //         name: '陈兰',
+    //         age: 21
+    //     },
+    //     {
+    //         name: '陈兰',
+    //         age: 22
+    //     },
+    //     {
+    //         name: '陈兰',
+    //         age: 23
+    //     },
+    //     {
+    //         name: '冰楠',
+    //         age: 28
+    //     },
+    // ]
 
-    list = list.reduce((data, item) => {
-        obj[item.name] ? "" : obj[item.name] = true && data.push(item);
-        return data;
-    }, [])
+    // let obj = {};
 
-    console.log(list);
+    // list = list.reduce((data, item) => {
+    //     obj[item.name] ? "" : obj[item.name] = true && data.push(item);
+    //     return data;
+    // }, [])
+
+    // console.log(list);
 </script>
 
 </html>

@@ -18,10 +18,6 @@ axios.interceptor.response.use(res=>{
     }
 })
 
-
-
-
-
 export const api={
     async get(url,data){
         try{
