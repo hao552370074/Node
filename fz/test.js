@@ -1,12 +1,16 @@
-var http = require('http');
-var fs = require('fs');
-var app = require('./server');
-var url = require('url');
+const http = require('http');
+const fs = require('fs');
+const app = require('./server');
+const url = require('url');
 var mimeMoudel = require('../moudel');
-var events=require('events');
-var EventEmitter=new events.EventEmitter();
-var MongoClient = require('mongodb').MongoClient;
-var MongoUrl = 'mongodb://127.0.0.1:27017/my';
+
+const events=require('events');
+const EventEmitter=new events.EventEmitter();
+
+const MongoClient = require('mongodb').MongoClient;
+const MongoUrl = 'mongodb://127.0.0.1:27017/my';
+
+
 http.createServer(app).listen(3000);
 // console.log('Server running at http://127.0.0.1:3000/');
 
@@ -21,19 +25,37 @@ app.get('/login', function (req, res) {
             console.log(error);
             return;
         }
-        db.collection('user').insertOne({
-            "name": '1',
-        },(error, result) => {
+
+        // 新增
+        // db.collection('user').insertOne({
+        //     "name": '2',
+        // },(error, result) => {
+        //     if (error) {
+        //         console.log('失败');
+        //         return;
+        //     }
+        //     console.log('成功');
+        //     res.writeHead(200, { 'Content-Type':`${mime}`+';charset="UTF-8"' });
+        //     // response.write(data)
+        //     res.end(JSON.stringify(result.ops));
+        //     db.close();
+        // })
+
+        // 查询 
+        var cursor=db.collection('user').find({"name":"2"}).skip(2).limit(4);
+        var list=[];
+        cursor.each(function (error,doc) {
             if (error) {
-                console.log('失败');
+                console.log(error);
                 return;
             }
-            console.log('成功');
-            res.writeHead(200, { 'Content-Type':`${mime}`+';charset="UTF-8"' });
-            // response.write(data)
-            res.end(JSON.stringify(result.ops));
-            db.close();
+            if (doc!=null) {
+                list.push(doc)
+            }else{
+                res.end(JSON.stringify(list))
+            }
         })
+
     })
 
 })
