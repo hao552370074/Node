@@ -42,8 +42,7 @@ http.createServer((request, response) => {
           response.end();
         })
       }else{
-        let mime=mimeMoudel.getExtname(fs,urls,EventEmitter)
-        
+        let mime=mimeMoudel.getExtname(fs,urls,EventEmitter);
         MongoClient.connect(MongoUrl,(error,db)=>{
           if (error) {
             console.log(error);
