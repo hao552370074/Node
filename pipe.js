@@ -14,8 +14,8 @@ const fs = require('fs');
 // var writeStream=fs.createWriteStream('./wenjian/size.txt');
 // writeStream.write(str);
 // writeStream.end();
-// writeStream.on('finish',(error)=>{
-//     console.log('写入成功');
+// writeconsoleStream.on('finish',(error)=>{
+//     .log('写入成功');
 // });
 
 var fileStream=fs.createReadStream('./wenjian/size.txt')

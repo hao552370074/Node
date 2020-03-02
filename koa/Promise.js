@@ -3,7 +3,6 @@ const MongoUrl = 'mongodb://127.0.0.1:27017/my'
 module.exports = {
     find(obj) {
         return new Promise((resolve, reject) => {
-            
             MongoClient.connect(MongoUrl, (err, db) => {
                 if (err) throw err;
                 var cursor = db.collection('user').find(obj);

@@ -33,6 +33,8 @@ router.get('/', async (ctx) => {
     ctx.body = '新闻';
 }).get('/mongo', async (ctx) => {
     let data= await Pi.find({'age':1});
+    // console.log(data);
+    
     // let data= await Pi.insert({'name':'中国战胜病疫！',"age":1});
     ctx.body={
         Code:1,
@@ -58,5 +60,5 @@ app
     .use(router.allowedMethods());
 
 
-app.listen(8080);
+app.listen(8088);
 // console.log('Server running at http://127.0.0.1:8080/');
