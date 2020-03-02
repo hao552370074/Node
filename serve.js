@@ -21,7 +21,7 @@
 // });
 var fs=require('fs');
 var url=require('url');
-var mimeMoudel=require('./moudel'); 
+var mimeMoudel=require('./moudel');
 var http = require('http');
 var events=require('events');
 var EventEmitter=new events.EventEmitter();
