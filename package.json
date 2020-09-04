@@ -4,6 +4,6 @@
     "koa-router": "^8.0.7",
     "koa2-cors": "^2.0.6",
     "koa2-response": "^2.0.2",
-    "mongodb": "^2.0.55"
+    "mongodb": "^3.6.1"
   }
 }
